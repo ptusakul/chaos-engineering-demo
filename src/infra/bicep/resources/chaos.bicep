@@ -27,16 +27,16 @@ module chaos2 '../chaos-experiments/chaos-keyvault-deny.bicep' = {
 }
 
 // Third experiment: Degradation of an AKS cluster
-/*module chaos3 '../chaos-experiments/chaos-aks-degradation.bicep' = {
+module chaos3 '../chaos-experiments/chaos-aks-degradation.bicep' = {
   name: '${nameprefix}-chaos-3'
   params: {
     nameprefix: nameprefix
     location: location
   }
-}*/
+}
 
 // Deployment Script: Get the VMSS Cluster Name
-module deploymentScript '../utils/aks-deploymentscript.bicep' = {
+/*module deploymentScript '../utils/aks-deploymentscript.bicep' = {
   name: '${nameprefix}-deploymentScript'
   params: {
     nameprefix: nameprefix
@@ -49,7 +49,7 @@ module deploymentScript '../utils/aks-deploymentscript.bicep' = {
     chaos2
     chaos3
   ]
-}
+}*/
 
 // Forth experiment: AKS cluster zone down
 module chaos4 '../chaos-experiments/chaos-zone-down.bicep' = {
