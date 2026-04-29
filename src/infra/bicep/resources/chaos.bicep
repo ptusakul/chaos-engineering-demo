@@ -9,13 +9,13 @@ param aksClusterResourceGroup string
 param uamiName string
 
 // First experiment: Disable a VMSS node
-/*module chaos1 '../chaos-experiments/chaos-vmss-disable-node.bicep' = {
+module chaos1 '../chaos-experiments/chaos-vmss-disable-node.bicep' = {
   name: '${nameprefix}-chaos-1'
   params: {
     nameprefix: nameprefix
     location: location
   }
-}*/
+}
 
 // Second experiment: Deny access to a Key Vault
 module chaos2 '../chaos-experiments/chaos-keyvault-deny.bicep' = {
@@ -36,7 +36,7 @@ module chaos3 '../chaos-experiments/chaos-aks-degradation.bicep' = {
 }
 
 // Deployment Script: Get the VMSS Cluster Name
-/*module deploymentScript '../utils/aks-deploymentscript.bicep' = {
+module deploymentScript '../utils/aks-deploymentscript.bicep' = {
   name: '${nameprefix}-deploymentScript'
   params: {
     nameprefix: nameprefix
@@ -49,7 +49,7 @@ module chaos3 '../chaos-experiments/chaos-aks-degradation.bicep' = {
     chaos2
     chaos3
   ]
-}*/
+}
 
 // Forth experiment: AKS cluster zone down
 module chaos4 '../chaos-experiments/chaos-zone-down.bicep' = {
