@@ -9,13 +9,13 @@ param aksClusterResourceGroup string
 param uamiName string
 
 // First experiment: Disable a VMSS node
-module chaos1 '../chaos-experiments/chaos-vmss-disable-node.bicep' = {
+/*module chaos1 '../chaos-experiments/chaos-vmss-disable-node.bicep' = {
   name: '${nameprefix}-chaos-1'
   params: {
     nameprefix: nameprefix
     location: location
   }
-}
+}*/
 
 // Second experiment: Deny access to a Key Vault
 module chaos2 '../chaos-experiments/chaos-keyvault-deny.bicep' = {
