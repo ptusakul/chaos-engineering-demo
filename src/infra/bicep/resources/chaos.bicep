@@ -52,7 +52,7 @@ module deploymentScript '../utils/aks-deploymentscript.bicep' = {
 }
 
 // Forth experiment: AKS cluster zone down
-module chaos4 '../chaos-experiments/chaos-zone-down.bicep' = {
+/*module chaos4 '../chaos-experiments/chaos-zone-down.bicep' = {
   name: '${nameprefix}-chaos-4'
   scope: resourceGroup(aksClusterResourceGroup)
   params: {
@@ -60,7 +60,7 @@ module chaos4 '../chaos-experiments/chaos-zone-down.bicep' = {
     location: location
     vmssClusterName: deploymentScript.outputs.vmssClusterName
   }
-}
+}*/
 
 // Fifth experiment: Deny NSG access to Cart
 module chaos5 '../chaos-experiments/chaos-nsg-deny.bicep' = {
