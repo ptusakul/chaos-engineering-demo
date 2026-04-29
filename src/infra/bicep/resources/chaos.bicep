@@ -60,7 +60,7 @@ module deploymentScript '../utils/aks-deploymentscript.bicep' = {
     location: location
     vmssClusterName: deploymentScript.outputs.vmssClusterName
   }
-}*/
+}
 
 // Fifth experiment: Deny NSG access to Cart
 module chaos5 '../chaos-experiments/chaos-nsg-deny.bicep' = {
@@ -78,6 +78,6 @@ module chaos6 '../chaos-experiments/chaos-aks-degradation-legacy.bicep' = {
     nameprefix: nameprefix
     location: location
   }
-}
+}*/
 
 // References to next experiments to be added here. 
