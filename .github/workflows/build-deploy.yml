@@ -128,6 +128,9 @@ jobs:
             sqlServerAdmin = $sqlAdminData
           }
           $res = New-AzDeployment -Name $env:DEPLOYMENT_NAME -TemplateFile "src/infra/bicep/main.bicep" -Location $env:DEPLOYMENT_REGION -TemplateParameterObject $parameters
+
+          Write-Output $res
+          Write-Output $res.Outputs
           
           # Save the outputs from the deployment
           # These contain the resource names we need for deploying
